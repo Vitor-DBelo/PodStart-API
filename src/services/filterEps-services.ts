@@ -1,9 +1,9 @@
 import { repositoryPodcast } from "../repo/podcast-repo";
-import { FilterPodcastModel} from "../models/response-podecast-moduls";
+import { DTOTrans} from "../models/DTOTtras";
 import { StatusCode } from "../utils/http-statusCode";
 
-export const filteEps = async (podcastName: string | undefined): Promise<FilterPodcastModel> => {
-    let responseFormat: FilterPodcastModel = {
+export const filteEps = async (podcastName: string | undefined): Promise<DTOTrans> => {
+    let responseFormat: DTOTrans = {
         StatusCode: 0,
         body: [],
     };

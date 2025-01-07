@@ -8,7 +8,7 @@ export const app = async (request: http.IncomingMessage, response: http.ServerRe
 
     //queryString
     
-    const [baseURL, queryString] = request.url?.split('?') ?? ['','']
+    const baseURL = request.url?.split('?')[0];
     
     if(request.method === HttpMethod.GET && baseURL === Routes.LIST){
         await getListEps(request,response);
