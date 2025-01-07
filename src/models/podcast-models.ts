@@ -1,4 +1,4 @@
-export interface podcast{
+export interface podcastModuls{
     podcastName: string;
     epsodio: string;
     idVideo: string;
