@@ -1,21 +1,8 @@
 import * as http from 'http';
-import {getFilterEps, getListEps} from './controllers/podcast-controller';
+import { app } from './app';
 
-const server = http.createServer(
-    async (request: http.IncomingMessage, response: http.ServerResponse) => {
 
-        //queryString
-        
-        const [baseURL, queryString] = request.url?.split('?') ?? ['','']
-        
-        if(request.method === 'GET' && baseURL === '/api/list'){
-            await getListEps(request,response);
-        }
-        if(request.method === 'GET' && baseURL === '/api/eps'){
-            await getFilterEps(request,response);
-        }
-    }
-);
+const server = http.createServer(app);
 
 const port = process.env.PORT
 

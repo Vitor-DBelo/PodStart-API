@@ -1,9 +1,11 @@
 import {IncomingMessage,request,ServerResponse} from "http";
 import {serviceListEps} from '../services/listEps-services';
 import { filteEps } from "../services/filterEps-services";
+import { StatusCode } from "../utils/http-statusCode";
+import { FilterPodcastModel } from "../models/response-podecast-moduls";
 
 export const getListEps = async (request:IncomingMessage, response:ServerResponse) =>{
-    response.writeHead(200,{'content-Type': 'application/json'});
+    response.writeHead(Number(StatusCode.Ok),{'content-Type': 'application/json'});
 
     const content = await serviceListEps();
 
@@ -14,14 +16,11 @@ export const getListEps = async (request:IncomingMessage, response:ServerRespons
 
 export const getFilterEps = async(request:IncomingMessage,response: ServerResponse) => {
     
-    //http://localhost:3636/api/eps?p=NomeDoPodcast
-    const queryString = request.url?.split('?p=')[1] || '';
-
-    const decodedQueryString = decodeURIComponent(queryString);
+    const content: FilterPodcastModel = await filteEps(request.url);
     
-    response.writeHead(200, {"Content-Type":"application/json"});
     
-    const content = await filteEps(decodedQueryString);
+    response.writeHead(content.StatusCode, {"Content-Type":"application/json"});
+    
 
-    response.end(content);
+    response.end(JSON.stringify(content.body));
 };
