@@ -1,8 +1,6 @@
 # API de Podcasts 🎙️
 
-> ⭐ Projeto desenvolvido durante o bootcamp da DIO (Digital Innovation One)
-
-Uma API RESTful para gerenciar e consultar episódios de podcasts, construída com Node.js e TypeScript.
+> ⭐  Uma API RESTful para gerenciar e consultar episódios de podcasts, construída com Node.js e TypeScript.
 
 ## 📋 Sobre o Projeto
 
