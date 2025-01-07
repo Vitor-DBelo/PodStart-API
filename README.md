@@ -50,11 +50,6 @@ git clone [url-do-repositorio]
 npm install
 ```
 
-3. Configure o arquivo `.env`:
-```env
-PORT=3636
-```
-
 4. Execute o projeto:
 ```bash
 npm run start:dev
