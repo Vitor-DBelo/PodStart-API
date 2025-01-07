@@ -43,16 +43,6 @@ Esta API permite listar e filtrar episódios de podcasts, fornecendo informaçõ
 git clone https://github.com/Vitor-DBelo/PodStart-API.git
 ```
 
-2. Instale as dependências:
-```bash
-npm install
-```
-
-4. Execute o projeto:
-```bash
-npm run start:dev
-```
-
 ## 📚 Estrutura do Projeto
 
 ```
